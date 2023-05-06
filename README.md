@@ -6,7 +6,9 @@ This repository refers Django custom user authentacation system.
 
 #### Run bellow command on your command prompt
 
-python manage.py startproject CustomUserAuth
+
+    python manage.py startproject CustomUserAuth
+
 
 ### Create Apps - 
 
@@ -17,7 +19,9 @@ python manage.py startproject CustomUserAuth
 
 #### Go to your project settings.py file and add 'account' on install apps section.
 
+
 INSTALLED_APPS = [
 
     'account',
 ]
+
