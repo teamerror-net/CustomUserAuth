@@ -25,16 +25,40 @@ INSTALLED_APPS = [
     'account',
 ]
 
-### Create CustomUserModel
+### Create Custom User Manager -
+
+#### Create a new file called manager.py on account folder and import bellow module -
+
+    from django.contrib.auth.base_user import BaseUserManager
+
+#### Create UserManager class on your models.py file.
+
+    class UserManager(BaseUserManager):
+        def create_user(self, username, password, **extra_fields):
+            if not username:
+                raise ValueError('Users must have a username')
+            user = self.model(username = username, **extra_fields)
+            user.set_password(password)
+            user.save()
+            return user
+
+        def create_superuser(self, username, password, **extra_fields):
+            user = self.create_user(username, password, **extra_fields)
+            user.is_superuser = True
+            user.is_staff = True
+            user.save()
+            return user
+
+### Create CustomUserModel -
 
 #### Go to account/models.py and import bellow module.
 
     from django.db import models
     from django.contrib.auth.models import AbstractBaseUser,PermissionsMixin
     from django.utils import timezone
-    from account.manager import UserManager
+    from account.manager import UserManager #import from account apps
     
-#### Create UserAuth on your models.py file.
+#### Create UserAuth class on your models.py file.
 
     class UserAuth(AbstractBaseUser,PermissionsMixin):
         class Meta:
@@ -56,3 +80,26 @@ INSTALLED_APPS = [
         def __str__(self):
             return self.username
             
+### Django Admin -
+
+#### Go to account/admin.py and import bellow module.
+
+    from django.contrib import admin
+    from account.models import UserAuth
+    from django.contrib.auth.admin import UserAdmin
+    from django.contrib.auth.models import Group
+    
+#### Create UserAuthAdmin class on your models.py file.
+
+    class UserAuthAdmin(UserAdmin):
+        search_fields = ('username',)
+    admin.site.register(UserAuth,UserAuthAdmin)
+    admin.site.unregister(Group)
+
+### Migrate and Migration -
+
+#### Run bellow command on your command prompt
+
+    python manage.py makemigrations
+
+    python manage.py migrate
