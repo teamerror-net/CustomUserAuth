@@ -89,17 +89,23 @@ INSTALLED_APPS = [
     from django.contrib.auth.admin import UserAdmin
     from django.contrib.auth.models import Group
     
-#### Create UserAuthAdmin class on your models.py file.
+#### Create UserAuthAdmin class on your admin.py file.
 
     class UserAuthAdmin(UserAdmin):
         search_fields = ('username',)
     admin.site.register(UserAuth,UserAuthAdmin)
     admin.site.unregister(Group)
 
-### Migrate and Migration -
+### Make Migrate, Migration and runserver -
 
-#### Run bellow command on your command prompt
+#### Run bellow command to makemigrations
 
     python manage.py makemigrations
+    
+#### Run bellow command to migrate
 
     python manage.py migrate
+    
+#### Run bellow command to runserver
+
+    python manage.py runserver
