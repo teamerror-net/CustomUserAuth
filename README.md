@@ -25,6 +25,8 @@ INSTALLED_APPS = [
     'account',
 ]
 
+### Create CustomUserModel
+
 #### Go to account/models.py and import bellow module.
 
     from django.db import models
@@ -32,7 +34,7 @@ INSTALLED_APPS = [
     from django.utils import timezone
     from account.manager import UserManager
     
-#### Create CustomUserModel
+#### Create UserAuth on your models.py file.
 
     class UserAuth(AbstractBaseUser,PermissionsMixin):
         class Meta:
