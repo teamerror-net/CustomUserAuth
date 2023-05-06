@@ -14,7 +14,7 @@ This repository refers Django custom user authentacation system.
 #### Run bellow command on your command prompt
 
 
-    python manage.py startproject CustomUserAuth
+    python manage.py startproject CustomUserAuth .
 
 
 ### Create Apps - 
@@ -116,3 +116,14 @@ INSTALLED_APPS = [
 #### Run bellow command to runserver
 
     python manage.py runserver
+    
+### Admin access
+
+#### Admin url
+    https://127.0.0.1:8000/admin
+    
+#### Admin username
+    admin
+    
+#### Admin password
+    admin
