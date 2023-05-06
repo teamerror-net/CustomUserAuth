@@ -2,6 +2,13 @@
 
 This repository refers Django custom user authentacation system.
 
+### Install - 
+
+#### Run bellow command on your command prompt
+
+
+    pip install django
+
 ### Create Project - 
 
 #### Run bellow command on your command prompt
