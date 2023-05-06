@@ -128,6 +128,12 @@ INSTALLED_APPS = [
 #### Admin password
     admin
 
-#### Hope you enjoy it. Thanks
+### 📫 How to reach me...
 
-website:https:teamerror.net
+Website: https://teamerror.net
+
+Email: teamerror.net@gmail.com
+
+Linkedin: https://www.linkedin.com/in/mehedi05/
+
+Twitter: https://twitter.com/teamerror_net
