@@ -38,7 +38,7 @@ INSTALLED_APPS = [
 
     from django.contrib.auth.base_user import BaseUserManager
 
-#### Create UserManager class on your models.py file.
+#### Create UserManager class on your manager.py file.
 
     class UserManager(BaseUserManager):
         def create_user(self, username, password, **extra_fields):
@@ -127,3 +127,7 @@ INSTALLED_APPS = [
     
 #### Admin password
     admin
+
+#### Hope you enjoy it. Thanks
+
+website:https:teamerror.net
