@@ -103,7 +103,7 @@ INSTALLED_APPS = [
     admin.site.register(UserAuth,UserAuthAdmin)
     admin.site.unregister(Group)
 
-### Make Migrate, Migration and runserver -
+### Makemigrate, migration and runserver -
 
 #### Run bellow command to makemigrations
 
