@@ -91,7 +91,6 @@ INSTALLED_APPS = [
 
 #### Go to account/admin.py and import bellow module.
 
-    from django.contrib import admin
     from account.models import UserAuth
     from django.contrib.auth.admin import UserAdmin
     from django.contrib.auth.models import Group
@@ -102,6 +101,12 @@ INSTALLED_APPS = [
         search_fields = ('username',)
     admin.site.register(UserAuth,UserAuthAdmin)
     admin.site.unregister(Group)
+    
+### Setup Django Settings -
+
+#### Add bellow code to your settings.py file
+
+    AUTH_USER_MODEL = 'account.UserAuth'
 
 ### Makemigrate, migration and runserver -
 
