@@ -118,6 +118,10 @@ INSTALLED_APPS = [
 
     python manage.py migrate
     
+#### Run bellow command to create superuser
+
+    python manage.py createsuperuser
+    
 #### Run bellow command to runserver
 
     python manage.py runserver
